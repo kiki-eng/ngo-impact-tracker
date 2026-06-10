@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OutcomeHub — Apply for Role</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: { DEFAULT: '#0d9e7e', light: '#e6f7f3', mid: '#0b8a6e' }
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+            serif: ['DM Serif Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#f2f1ed] min-h-screen font-sans">
+
+  <!-- ── TOPBAR ── -->
+  <header class="fixed top-0 left-0 right-0 h-16 bg-white border-b border-[#e9e8e4] flex items-center px-8 z-50 gap-4">
+    <a href="dashboard.html" class="flex items-center gap-2 no-underline">
+      <div class="w-[30px] h-[30px] bg-teal rounded-lg flex items-center justify-center">
+        <svg class="w-[15px] h-[15px] stroke-white" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </div>
+    </a>
+    <span class="flex-1 text-center text-[1.05rem] font-semibold text-teal tracking-tight">OutcomeHub</span>
+    <a href="dashboard.html" class="ml-auto flex items-center gap-1.5 text-[0.83rem] font-medium text-gray-500 no-underline px-3 py-1.5 border border-[#e5e7eb] rounded-lg bg-[#fafafa] hover:border-gray-300 hover:text-gray-700 transition-colors">
+      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Explore
+    </a>
+  </header>
+
+  <!-- ── PAGE ── -->
+  <div class="pt-24 pb-16 max-w-[720px] mx-auto px-6">
+
+    <!-- Role Banner -->
+    <div class="bg-white border border-[#e9e8e4] rounded-2xl p-4 flex items-center gap-4 mb-7">
+      <div class="w-[46px] h-[46px] bg-teal-light rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🌿</div>
+      <div class="flex-1 min-w-0">
+        <p class="text-[0.72rem] font-semibold uppercase tracking-widest text-gray-400 mb-0.5">Green Earth NGO</p>
+        <p class="text-[0.95rem] font-semibold text-gray-900 tracking-tight">Content Creator & Social Media Lead</p>
+        <div class="flex gap-3 mt-1">
+          <span class="flex items-center gap-1 text-[0.73rem] text-gray-400">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Lagos, Nigeria
+          </span>
+          <span class="flex items-center gap-1 text-[0.73rem] text-gray-400">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 months
+          </span>
+          <span class="flex items-center gap-1 text-[0.73rem] text-gray-400">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            4 spots left
+          </span>
+        </div>
+      </div>
+      <span class="flex-shrink-0 px-3 py-1 bg-teal-light text-teal text-[0.73rem] font-semibold rounded-full">Applying</span>
+    </div>
+
+    <!-- Stepper -->
+    <div class="flex items-center mb-7" id="stepper">
+
+      <div class="flex flex-col items-center gap-1.5 flex-1 cursor-pointer" id="step-1" onclick="jumpTo(1)">
+        <div id="circle-1" class="w-[34px] h-[34px] rounded-full border-2 border-teal bg-teal flex items-center justify-center text-[0.78rem] font-semibold text-white transition-all duration-300">1</div>
+        <span class="text-[0.7rem] font-semibold text-teal whitespace-nowrap" id="label-1">Personal Info</span>
+      </div>
+
+      <div id="line-1" class="flex-1 h-0.5 bg-[#e5e7eb] mb-5 transition-all duration-300"></div>
+
+      <div class="flex flex-col items-center gap-1.5 flex-1 cursor-pointer" id="step-2" onclick="jumpTo(2)">
+        <div id="circle-2" class="w-[34px] h-[34px] rounded-full border-2 border-[#e5e7eb] bg-white flex items-center justify-center text-[0.78rem] font-semibold text-gray-400 transition-all duration-300">2</div>
+        <span class="text-[0.7rem] font-medium text-gray-400 whitespace-nowrap" id="label-2">Why You?</span>
+      </div>
+
+      <div id="line-2" class="flex-1 h-0.5 bg-[#e5e7eb] mb-5 transition-all duration-300"></div>
+
+      <div class="flex flex-col items-center gap-1.5 flex-1 cursor-pointer" id="step-3" onclick="jumpTo(3)">
+        <div id="circle-3" class="w-[34px] h-[34px] rounded-full border-2 border-[#e5e7eb] bg-white flex items-center justify-center text-[0.78rem] font-semibold text-gray-400 transition-all duration-300">3</div>
+        <span class="text-[0.7rem] font-medium text-gray-400 whitespace-nowrap" id="label-3">Availability</span>
+      </div>
+
+      <div id="line-3" class="flex-1 h-0.5 bg-[#e5e7eb] mb-5 transition-all duration-300"></div>
+
+      <div class="flex flex-col items-center gap-1.5 flex-1 cursor-pointer" id="step-4" onclick="jumpTo(4)">
+        <div id="circle-4" class="w-[34px] h-[34px] rounded-full border-2 border-[#e5e7eb] bg-white flex items-center justify-center text-[0.78rem] font-semibold text-gray-400 transition-all duration-300">4</div>
+        <span class="text-[0.7rem] font-medium text-gray-400 whitespace-nowrap" id="label-4">Review</span>
+      </div>
+
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="h-[3px] bg-[#e9e8e4] rounded-full mb-7 overflow-hidden" id="progress-bar-wrap">
+      <div id="progress-fill" class="h-full bg-teal rounded-full transition-all duration-500" style="width:25%"></div>
+    </div>
+
+    <!-- ── FORM CARD ── -->
+    <div class="bg-white border border-[#e9e8e4] rounded-2xl p-8">
+
+      <!-- STEP 1: Personal Info -->
+      <div id="panel-1">
+        <h2 class="font-serif text-[1.5rem] text-gray-900 tracking-tight mb-1">Personal Information</h2>
+        <p class="text-[0.83rem] text-gray-400 mb-7">Let the NGO know who they're working with.</p>
+
+        <div class="grid grid-cols-2 gap-4">
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">First Name</label>
+            <input id="f-fname" type="text" placeholder="David" value=""
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white"/>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-fname">Required</span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Last Name</label>
+            <input id="f-lname" type="text" placeholder="Emmanuel" value=""
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white"/>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-lname">Required</span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Email Address</label>
+            <input id="f-email" type="email" placeholder="david@example.com" value=""
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white"/>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-email">Enter a valid email</span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Phone Number</label>
+            <input id="f-phone" type="tel" placeholder="+234 801 234 5678"
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white"/>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-phone">Required</span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">City / State</label>
+            <input id="f-city" type="text" placeholder="Lagos, Nigeria" value=""
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white"/>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-city">Required</span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Profession / Role</label>
+            <input id="f-profession" type="text" placeholder="e.g. Cartoonist" value=""
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white"/>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-profession">Required</span>
+          </div>
+
+          <div class="col-span-2 flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">LinkedIn / Portfolio URL <span class="font-normal text-gray-400">(optional)</span></label>
+            <input id="f-url" type="url" placeholder="https://linkedin.com/in/your-profile"
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white"/>
+          </div>
+
+        </div>
+
+        <div class="flex justify-between items-center mt-7">
+          <span class="text-[0.78rem] text-gray-400">Step 1 of 4</span>
+          <button onclick="goNext(1)" class="flex items-center gap-1.5 px-6 py-2.5 bg-teal hover:bg-teal-mid text-white text-[0.875rem] font-semibold rounded-[9px] transition-colors cursor-pointer border-0">
+            Continue
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Why You? -->
+      <div id="panel-2" class="hidden">
+        <h2 class="font-serif text-[1.5rem] text-gray-900 tracking-tight mb-1">Why Are You the One?</h2>
+        <p class="text-[0.83rem] text-gray-400 mb-7">Show the NGO your passion and what you bring to the table.</p>
+
+        <div class="flex flex-col gap-5">
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Motivation Letter</label>
+            <textarea id="f-motivation" maxlength="600" oninput="updateChar(this,'char-motivation',600)"
+              placeholder="Tell the NGO why you want this role and what drives you to volunteer…"
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white resize-y min-h-[110px] leading-relaxed"></textarea>
+            <div class="flex justify-end text-[0.7rem] text-gray-400"><span id="char-motivation">0 / 600</span></div>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-motivation">Please write at least 50 characters</span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Past Experience <span class="font-normal text-gray-400">(optional)</span></label>
+            <textarea id="f-experience" maxlength="400" oninput="updateChar(this,'char-experience',400)"
+              placeholder="Describe any relevant experience — volunteer work, jobs, projects…"
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white resize-y min-h-[80px] leading-relaxed"></textarea>
+            <div class="flex justify-end text-[0.7rem] text-gray-400"><span id="char-experience">0 / 400</span></div>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Relevant Skills</label>
+            <p class="text-[0.75rem] text-gray-400">Select all that apply</p>
+            <div class="flex flex-wrap gap-2 mt-1" id="skills-wrap">
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Content Writing</span>
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Social Media</span>
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Graphic Design</span>
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Video Editing</span>
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Photography</span>
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Community Outreach</span>
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Fundraising</span>
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Research</span>
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Public Speaking</span>
+              <span onclick="toggleSkill(this)" class="skill-chip px-3 py-1.5 border border-[#e5e7eb] rounded-full text-[0.78rem] font-medium text-gray-700 cursor-pointer hover:border-teal hover:text-teal transition-all select-none">Translation</span>
+            </div>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-skills">Please select at least one skill</span>
+          </div>
+
+        </div>
+
+        <div class="flex justify-between items-center mt-7">
+          <button onclick="goPrev(2)" class="flex items-center gap-1.5 px-5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] font-medium text-gray-700 bg-white hover:border-gray-300 transition-colors cursor-pointer">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+          </button>
+          <span class="text-[0.78rem] text-gray-400">Step 2 of 4</span>
+          <button onclick="goNext(2)" class="flex items-center gap-1.5 px-6 py-2.5 bg-teal hover:bg-teal-mid text-white text-[0.875rem] font-semibold rounded-[9px] transition-colors cursor-pointer border-0">
+            Continue
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Availability -->
+      <div id="panel-3" class="hidden">
+        <h2 class="font-serif text-[1.5rem] text-gray-900 tracking-tight mb-1">Your Availability</h2>
+        <p class="text-[0.83rem] text-gray-400 mb-7">Help the NGO plan around your schedule.</p>
+
+        <div class="flex flex-col gap-5">
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Earliest Start Date</label>
+            <input id="f-startdate" type="date"
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white cursor-pointer"/>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-startdate">Please select a start date</span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Preferred Days</label>
+            <p class="text-[0.75rem] text-gray-400">Select all that work for you</p>
+            <div class="grid grid-cols-3 gap-2.5 mt-1" id="days-grid">
+              <div onclick="toggleTile(this)" class="avail-tile p-2.5 border border-[#e5e7eb] rounded-xl text-center cursor-pointer hover:border-teal transition-all select-none">
+                <div class="t-label text-[0.78rem] font-semibold text-gray-700">Mon</div>
+                <div class="text-[0.68rem] text-gray-400 mt-0.5">Monday</div>
+              </div>
+              <div onclick="toggleTile(this)" class="avail-tile p-2.5 border border-[#e5e7eb] rounded-xl text-center cursor-pointer hover:border-teal transition-all select-none">
+                <div class="t-label text-[0.78rem] font-semibold text-gray-700">Tue</div>
+                <div class="text-[0.68rem] text-gray-400 mt-0.5">Tuesday</div>
+              </div>
+              <div onclick="toggleTile(this)" class="avail-tile p-2.5 border border-[#e5e7eb] rounded-xl text-center cursor-pointer hover:border-teal transition-all select-none">
+                <div class="t-label text-[0.78rem] font-semibold text-gray-700">Wed</div>
+                <div class="text-[0.68rem] text-gray-400 mt-0.5">Wednesday</div>
+              </div>
+              <div onclick="toggleTile(this)" class="avail-tile p-2.5 border border-[#e5e7eb] rounded-xl text-center cursor-pointer hover:border-teal transition-all select-none">
+                <div class="t-label text-[0.78rem] font-semibold text-gray-700">Thu</div>
+                <div class="text-[0.68rem] text-gray-400 mt-0.5">Thursday</div>
+              </div>
+              <div onclick="toggleTile(this)" class="avail-tile p-2.5 border border-[#e5e7eb] rounded-xl text-center cursor-pointer hover:border-teal transition-all select-none">
+                <div class="t-label text-[0.78rem] font-semibold text-gray-700">Fri</div>
+                <div class="text-[0.68rem] text-gray-400 mt-0.5">Friday</div>
+              </div>
+              <div onclick="toggleTile(this)" class="avail-tile p-2.5 border border-[#e5e7eb] rounded-xl text-center cursor-pointer hover:border-teal transition-all select-none">
+                <div class="t-label text-[0.78rem] font-semibold text-gray-700">Sat</div>
+                <div class="text-[0.68rem] text-gray-400 mt-0.5">Saturday</div>
+              </div>
+              <div onclick="toggleTile(this)" class="avail-tile p-2.5 border border-[#e5e7eb] rounded-xl text-center cursor-pointer hover:border-teal transition-all select-none">
+                <div class="t-label text-[0.78rem] font-semibold text-gray-700">Sun</div>
+                <div class="text-[0.68rem] text-gray-400 mt-0.5">Sunday</div>
+              </div>
+            </div>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-days">Please select at least one day</span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Hours Available Per Week</label>
+            <input type="range" id="f-hours" min="1" max="40" value="10" oninput="updateHours(this.value)"
+              class="w-full accent-teal cursor-pointer mt-1"/>
+            <div class="flex justify-between text-[0.72rem] text-gray-400"><span>1 hr</span><span>20 hrs</span><span>40 hrs</span></div>
+            <div id="hours-label" class="text-[0.85rem] font-semibold text-teal mt-1">10 hours / week</div>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[0.8rem] font-medium text-gray-700">Preferred Work Mode</label>
+            <select id="f-workmode"
+              class="px-3.5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] text-gray-900 bg-[#fafafa] outline-none font-sans transition focus:border-teal focus:ring-2 focus:ring-teal/10 focus:bg-white cursor-pointer">
+              <option value="">Select an option</option>
+              <option value="On-site">On-site</option>
+              <option value="Remote">Remote</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Full Time">Full Time</option>
+            </select>
+            <span class="text-[0.72rem] text-red-500 hidden" id="e-workmode">Please select a work mode</span>
+          </div>
+
+        </div>
+
+        <div class="flex justify-between items-center mt-7">
+          <button onclick="goPrev(3)" class="flex items-center gap-1.5 px-5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] font-medium text-gray-700 bg-white hover:border-gray-300 transition-colors cursor-pointer">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+          </button>
+          <span class="text-[0.78rem] text-gray-400">Step 3 of 4</span>
+          <button onclick="goNext(3)" class="flex items-center gap-1.5 px-6 py-2.5 bg-teal hover:bg-teal-mid text-white text-[0.875rem] font-semibold rounded-[9px] transition-colors cursor-pointer border-0">
+            Continue
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Review -->
+      <div id="panel-4" class="hidden">
+        <h2 class="font-serif text-[1.5rem] text-gray-900 tracking-tight mb-1">Review & Submit</h2>
+        <p class="text-[0.83rem] text-gray-400 mb-7">Double-check everything before sending your application.</p>
+
+        <!-- Personal Info Review -->
+        <div class="border border-[#e9e8e4] rounded-xl overflow-hidden mb-4">
+          <div class="flex items-center justify-between px-4 py-3 bg-[#fafafa] border-b border-[#e9e8e4]">
+            <span class="text-[0.78rem] font-semibold text-gray-700 uppercase tracking-wider">Personal Info</span>
+            <a onclick="jumpTo(1)" class="text-[0.75rem] text-teal font-medium cursor-pointer hover:underline">Edit</a>
+          </div>
+          <div class="p-4 grid grid-cols-2 gap-3" id="review-personal"></div>
+        </div>
+
+        <!-- Why You Review -->
+        <div class="border border-[#e9e8e4] rounded-xl overflow-hidden mb-4">
+          <div class="flex items-center justify-between px-4 py-3 bg-[#fafafa] border-b border-[#e9e8e4]">
+            <span class="text-[0.78rem] font-semibold text-gray-700 uppercase tracking-wider">Why You?</span>
+            <a onclick="jumpTo(2)" class="text-[0.75rem] text-teal font-medium cursor-pointer hover:underline">Edit</a>
+          </div>
+          <div class="p-4 flex flex-col gap-3" id="review-why"></div>
+        </div>
+
+        <!-- Availability Review -->
+        <div class="border border-[#e9e8e4] rounded-xl overflow-hidden mb-4">
+          <div class="flex items-center justify-between px-4 py-3 bg-[#fafafa] border-b border-[#e9e8e4]">
+            <span class="text-[0.78rem] font-semibold text-gray-700 uppercase tracking-wider">Availability</span>
+            <a onclick="jumpTo(3)" class="text-[0.75rem] text-teal font-medium cursor-pointer hover:underline">Edit</a>
+          </div>
+          <div class="p-4 grid grid-cols-2 gap-3" id="review-avail"></div>
+        </div>
+
+        <div class="flex justify-between items-center mt-7">
+          <button onclick="goPrev(4)" class="flex items-center gap-1.5 px-5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] font-medium text-gray-700 bg-white hover:border-gray-300 transition-colors cursor-pointer">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+          </button>
+          <span class="text-[0.78rem] text-gray-400">Step 4 of 4</span>
+          <button id="submit-btn" onclick="submitApplication()" class="flex items-center gap-1.5 px-6 py-2.5 bg-teal hover:bg-teal-mid text-white text-[0.875rem] font-semibold rounded-[9px] transition-colors cursor-pointer border-0">
+            Submit Application 🚀
+          </button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div id="success-screen" class="hidden text-center py-8 px-4">
+        <div class="w-[72px] h-[72px] bg-teal-light rounded-full flex items-center justify-center mx-auto mb-5">
+          <svg class="w-[34px] h-[34px] stroke-teal" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 class="font-serif text-[1.6rem] text-gray-900 tracking-tight mb-2">Application Submitted!</h2>
+        <p class="text-[0.875rem] text-gray-500 leading-relaxed max-w-[38ch] mx-auto mb-7">Your application to <strong>Green Earth NGO</strong> has been sent. They'll review it and get back to you within 3–5 business days.</p>
+        <div class="flex gap-3 justify-center flex-wrap">
+          <a href="dashboard.html" class="flex items-center gap-1.5 px-6 py-2.5 bg-teal hover:bg-teal-mid text-white text-[0.875rem] font-semibold rounded-[9px] transition-colors no-underline">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            Back to Explore
+          </a>
+          <button onclick="showToast('Opening saved roles…')" class="flex items-center gap-1.5 px-5 py-2.5 border border-[#e5e7eb] rounded-[9px] text-[0.875rem] font-medium text-gray-700 bg-white hover:border-gray-300 transition-colors cursor-pointer">
+            View Saved Roles
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /form-card -->
+  </div><!-- /page -->
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-16 bg-gray-900 text-white px-5 py-2.5 rounded-full text-[0.82rem] font-medium opacity-0 transition-all duration-300 z-50 whitespace-nowrap pointer-events-none"></div>
+
+  <script src="application.js"></script>
+</body>
+</html>
