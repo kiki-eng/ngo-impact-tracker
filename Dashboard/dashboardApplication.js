@@ -1,33 +1,33 @@
-// Sidebar Navigation
 
-const navItems = document.querySelectorAll('.nav-item');
+
+// Sidebar navigation active state + page switch simulation
+
+const navItems = document.querySelectorAll(".item");
 
 navItems.forEach(item => {
-    item.addEventListener('click', () => {
+  item.addEventListener("click", () => {
 
-        document
-            .querySelector('.nav-item.active')
-            ?.classList.remove('active');
+    // remove active class from all
+    navItems.forEach(i => i.classList.remove("active"));
 
-        item.classList.add('active');
-    });
+    // add active to clicked
+    item.classList.add("active");
+
+    // get page
+    const page = item.getAttribute("data-page");
+
+    console.log("Navigating to:", page);
+
+    // OPTIONAL: real navigation
+    // window.location.href = page;
+
+  });
 });
 
 
-// Activate Button
-
-const buttons = document.querySelectorAll('.btn');
-
-buttons.forEach(btn => {
-
-    btn.addEventListener('click', () => {
-
-        if(btn.textContent.trim() === 'Activate'){
-
-            btn.textContent = 'Activated ✓';
-            btn.style.background = '#16a34a';
-            btn.style.color = '#ffffff';
-        }
-    });
-
+// Example button actions (right panel)
+document.querySelectorAll(".btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert(btn.textContent + " clicked!");
+  });
 });

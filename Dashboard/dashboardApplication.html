@@ -4,55 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OutcomeHub - Application Submitted</title>
+
 <link rel="stylesheet" href="dashboardApplication.css">
 </head>
 
 <body>
+
 <div class="app-container">
-<nav>
+
+  <!-- SIDEBAR -->
+  <nav>
 
     <div class="item active" data-page="dashboard.html">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7"/>
-            <rect x="14" y="3" width="7" height="7"/>
-            <rect x="3" y="14" width="7" height="7"/>
-            <rect x="14" y="14" width="7" height="7"/>
-        </svg>
-        Dashboard
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+      </svg>
+      Dashboard
     </div>
 
-    <div class="
-    item" data-page="application.html">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-        Application
+    <div class="item" data-page="application.html">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      Application
     </div>
 
     <div class="item" data-page="saved-roles.html">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
-        </svg>
-        Saved Roles
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+      </svg>
+      Saved Roles
     </div>
 
     <div class="item" data-page="completed-task.html">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
-        </svg>
-        Completed Task
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
+      </svg>
+      Completed Task
     </div>
-</nav>
 
-  <!-- Main -->
+  </nav>
+
+  <!-- MAIN -->
   <main class="main">
 
     <div class="topbar">
       <div></div>
 
-      <div class="topbar-center">
-        OutcomeHub
-      </div>
+      <div class="topbar-center">OutcomeHub</div>
 
       <div class="topbar-right">
         <button class="icon-btn">✉️</button>
@@ -70,6 +72,9 @@
         <div class="checkmark">
           <svg viewBox="0 0 24 24">
             <path d="M20 6L9 17l-5-5"
+              stroke="green"
+              stroke-width="3"
+              fill="none"
               stroke-linecap="round"
               stroke-linejoin="round"/>
           </svg>
@@ -77,18 +82,14 @@
 
         <h2>Application Submitted!</h2>
 
-        <p>
-          Your application for the role has been sent to the organization
-        </p>
+        <p>Your application for the role has been sent to the organization</p>
 
         <div class="status-box">
           <div class="dot"></div>
 
           <div>
-            <div class="status-title">"nav-item active"data-page="application" Application sent</div>
-            <div class="status-subtitle">
-              We will notify you of updates
-            </div>
+            <div class="status-title">Application sent</div>
+            <div class="status-subtitle">We will notify you of updates</div>
           </div>
         </div>
 
@@ -98,14 +99,11 @@
 
       </div>
 
-      <!-- Right Panel -->
+      <!-- RIGHT PANEL -->
       <aside class="right-panel">
 
         <div class="profile">
-          <img
-            src="https://i.pravatar.cc/150?u=david"
-            alt="David Emmanuel">
-
+          <img src="https://i.pravatar.cc/150?u=david" alt="David Emmanuel">
           <h3>David Emmanuel</h3>
           <p>Cartoonist</p>
         </div>
@@ -114,22 +112,20 @@
         <button class="btn">Rejected Roles</button>
         <button class="btn">Milestone</button>
 
-        <div class="section-title">
-          Receive Role Alerts
-        </div>
+        <div class="section-title">Receive Role Alerts</div>
 
         <div class="section-text">
           See new opportunities as soon as they are posted
         </div>
 
-        <button class="btn activate-btn">
-          Activate
-        </button>
+        <button class="btn activate-btn">Activate</button>
 
       </aside>
 
     </div>
+
   </main>
+
 </div>
 
 <script src="dashboardApplication.js"></script>
