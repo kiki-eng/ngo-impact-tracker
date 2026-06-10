@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OutcomeHub - Dashboard</title>
+  <link rel="stylesheet" href="dashboardNGO.css">
+</head>
+<body>
+  <div class="app">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="logo">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+        
+        <nav>
+          <a href="#" class="nav-link">
+            <i class="fas fa-th-large"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="nav-link active">
+            <i class="far fa-compass"></i>
+            <span>Explore</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="far fa-bookmark"></i>
+            <span>Saved Roles</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="far fa-check-square"></i>
+            <span>Completed Task</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <a href="#" class="nav-link">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+        <a href="../auth/login.html" class="nav-link" id="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Log out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="header">
+        <h1>OutcomeHub</h1>
+        <div class="header-right">
+          <i class="far fa-envelope"></i>
+          <i class="fas fa-bell"></i>
+          <div class="user-menu">
+            <img src="https://i.pravatar.cc/32?u=david" alt="David">
+            <span>David</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Left Content -->
+        <div class="content-left">
+          
+          <!-- NGO Banner -->
+          <div class="ngo-card">
+            <div class="ngo-logo-box">
+              <span>Logo</span>
+            </div>
+            <div class="ngo-details">
+              <h2>NGO</h2>
+              <p class="ngo-location">LOCATION</p>
+              <button class="slots-badge">Number of slots open</button>
+            </div>
+          </div>
+
+          <!-- Meta Info -->
+          <div class="meta-row">
+            <div class="meta-item">
+              <i class="far fa-calendar-alt"></i>
+              <span>DATE</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>LOCATION</span>
+            </div>
+            <div class="meta-item">
+              <i class="far fa-clock"></i>
+              <span>TIME</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-users"></i>
+              <span>VOLUTEERS</span>
+            </div>
+          </div>
+
+          <!-- About Role -->
+          <div class="section-card">
+            <h3>About this role</h3>
+            <p>Marvel media is looking for volunteers...</p>
+          </div>
+
+          <!-- Available Roles -->
+          <div class="section-card">
+            <h3>Available Roles</h3>
+            <div class="roles">
+              <div class="role-row">
+                <span>Role 1</span>
+                <span class="role-slots">number of slots open</span>
+              </div>
+              <div class="role-row">
+                <span>Role 2</span>
+                <span class="role-slots">number of slots open</span>
+              </div>
+              <div class="role-row">
+                <span>Role 3</span>
+                <span class="role-slots">number of slots open</span>
+              </div>
+              <div class="role-row">
+                <span>Role 4</span>
+                <span class="role-slots">number of slots open</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SOP Dropdown -->
+          <div class="sop-box">
+            <i class="far fa-file-alt"></i>
+            <span>Standard Operating Procedure</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+
+          <button class="btn-apply">Apply Now</button>
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="content-right">
+          <div class="profile-box">
+            <img src="https://i.pravatar.cc/80?u=david" alt="David Emmanuel">
+            <h3>David Emmanuel</h3>
+            <p>Cartoonist</p>
+            
+            <div class="profile-btns">
+              <button class="btn-ghost">Approved Roles</button>
+              <button class="btn-ghost">Rejected Roles</button>
+              <button class="btn-ghost">Milestone</button>
+            </div>
+          </div>
+
+          <div class="alerts-box">
+            <h4>Receive Role Alerts</h4>
+            <p>See new opportunities seconds after they are posted</p>
+            <button class="btn-activate" id="activateBtn">Activate</button>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="dashboardNGO.js"></script>
+</body>
+</html>

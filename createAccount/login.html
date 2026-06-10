@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VolunteerBridge Registration</title>
+
+  <link rel="stylesheet" href="login.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>Create Account</h1>
+      <p>Join thousands making a difference</p>
+    </div>
+
+    <div class="role-selection">
+      <div class="role-card selected" id="card-volunteer">
+        <h3>Volunteer</h3>
+        <p>Find opportunities and contribute</p>
+      </div>
+
+      <div class="role-card" id="card-ngo">
+        <h3>NGO / Organization</h3>
+        <p>Post opportunities and manage volunteers</p>
+      </div>
+    </div>
+
+    <form id="registerForm">
+
+      <div class="input-group">
+        <label>First Name</label>
+        <input type="text" id="firstName" required>
+      </div>
+
+      <div class="input-group">
+        <label>Last Name</label>
+        <input type="text" id="lastName" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email Address</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="password" required>
+      </div>
+
+      <div class="input-group">
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword" required>
+      </div>
+
+      <button type="submit" class="btn-primary">
+        Create Account
+      </button>
+
+      <p class="login-link">
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+
+    </form>
+
+  </div>
+
+  <script src="login.js"></script>
+
+</body>
+</html>
