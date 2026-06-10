@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aderohunmu Ibrahim Adebowale — Frontend Developer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"DM Serif Display"', 'serif'],
+          sans: ['"DM Sans"', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .blink { animation: blink 2s infinite; }
+</style>
+</head>
+<body class="bg-white dark:bg-[#0c0c0c] text-neutral-900 dark:text-neutral-100 font-sans transition-colors duration-300">
+
+<div class="max-w-2xl mx-auto px-8 py-20 pb-32">
+
+  <!-- THEME TOGGLE -->
+  <div class="flex justify-end mb-20">
+    <button
+      onclick="toggleTheme()"
+      id="themeBtn"
+      class="text-xs tracking-wider text-neutral-400 dark:text-neutral-600 border border-neutral-200 dark:border-neutral-800 rounded-full px-4 py-1.5 hover:text-neutral-900 dark:hover:text-neutral-100 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all duration-200 cursor-pointer bg-transparent"
+    >
+      <span id="themeIcon">☀️</span>
+    </button>
+  </div>
+
+  <!-- INTRO -->
+  <div class="mb-24">
+    <div class="flex items-center gap-3 text-xs tracking-[0.12em] uppercase text-neutral-400 dark:text-neutral-600 mb-6">
+      <span class="inline-block w-6 h-px bg-neutral-400 dark:bg-neutral-600"></span>
+      Frontend Developer
+    </div>
+
+    <h1 class="font-serif text-6xl md:text-8xl font-normal leading-none tracking-tight mb-8">
+      Aderohunmu<br>
+      <em class="italic text-neutral-400 dark:text-neutral-600">Ibrahim</em><br>
+      Adebowale
+    </h1>
+
+    <p class="text-base text-neutral-500 dark:text-neutral-500 max-w-md leading-relaxed mb-10 font-light">
+      I build fast, beautiful, and accessible web experiences — turning complex ideas into interfaces that are both functional and a pleasure to use.
+    </p>
+
+    <div class="flex items-center gap-2 text-xs tracking-wider text-neutral-400 dark:text-neutral-600">
+      <span class="w-1.5 h-1.5 rounded-full bg-green-500 blink inline-block"></span>
+      Available for new opportunities
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="h-px bg-neutral-200 dark:bg-neutral-800 my-14"></div>
+
+  <!-- PROJECTS -->
+  <p class="text-xs tracking-[0.16em] uppercase text-neutral-400 dark:text-neutral-600 mb-10">Selected work</p>
+
+  <!-- PROJECT 01 -->
+  <div class="py-9 border-t border-b border-neutral-200 dark:border-neutral-800">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs tracking-widest text-neutral-400 dark:text-neutral-600">01</span>
+      <a
+        href="https://apexgridmaritime.com/"
+        target="_blank"
+        class="text-xs tracking-wider text-neutral-400 dark:text-neutral-600 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200 no-underline"
+      >Visit site ↗</a>
+    </div>
+    <h2 class="font-serif text-3xl md:text-4xl font-normal leading-tight mb-3 tracking-tight">APEXGRID Maritime</h2>
+    <p class="text-sm text-neutral-500 dark:text-neutral-500 leading-relaxed mb-5 font-light">
+      A full website for a shipping company specialising in global import and export logistics — built to inform, convert, and establish trust.
+    </p>
+    <div class="flex flex-wrap gap-1.5">
+      <span class="text-xs text-neutral-400 dark:text-neutral-600 bg-neutral-100 dark:bg-neutral-900 px-3 py-1 rounded-full tracking-wider">HTML</span>
+      <span class="text-xs text-neutral-400 dark:text-neutral-600 bg-neutral-100 dark:bg-neutral-900 px-3 py-1 rounded-full tracking-wider">CSS</span>
+      <span class="text-xs text-neutral-400 dark:text-neutral-600 bg-neutral-100 dark:bg-neutral-900 px-3 py-1 rounded-full tracking-wider">JavaScript</span>
+    </div>
+  </div>
+
+  <!-- PLACEHOLDER -->
+  <div class="py-9 border-b border-neutral-200 dark:border-neutral-800 flex items-center gap-4">
+    <div class="flex-1 h-px bg-neutral-200 dark:bg-neutral-800"></div>
+    <span class="text-xs tracking-widest text-neutral-400 dark:text-neutral-700 whitespace-nowrap">more projects coming soon</span>
+    <div class="flex-1 h-px bg-neutral-200 dark:bg-neutral-800"></div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="mt-20">
+    <h2 class="font-serif text-5xl md:text-6xl font-normal leading-tight tracking-tight mb-4">
+      Let's work<br>
+      <em class="italic text-neutral-400 dark:text-neutral-600">together</em>
+    </h2>
+    <p class="text-sm text-neutral-500 dark:text-neutral-500 mb-10 font-light leading-relaxed max-w-sm">
+      Open to freelance projects, full-time roles, and good conversations about frontend craft.
+    </p>
+
+    <div class="flex flex-col">
+      <a
+        href="mailto:ibrahimaderohunmu1@gmail.com"
+        class="flex items-center justify-between py-5 border-t border-b border-neutral-200 dark:border-neutral-800 no-underline text-neutral-900 dark:text-neutral-100 hover:text-neutral-400 dark:hover:text-neutral-600 transition-colors duration-200"
+      >
+        <div class="text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600">Email</div>
+        <span class="text-neutral-400 dark:text-neutral-600 text-sm">↗</span>
+      </a>
+
+      <a
+        href="https://github.com/Leebraaa"
+        target="_blank"
+        class="flex items-center justify-between py-5 border-b border-neutral-200 dark:border-neutral-800 no-underline text-neutral-900 dark:text-neutral-100 hover:text-neutral-400 dark:hover:text-neutral-600 transition-colors duration-200"
+      >
+        <div class="text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600">GitHub</div>
+        <span class="text-neutral-400 dark:text-neutral-600 text-sm">↗</span>
+      </a>
+
+      <a
+        href="https://linkedin.com/in/ibrahim-aderohunmu-8808b1307"
+        target="_blank"
+        class="flex items-center justify-between py-5 border-b border-neutral-200 dark:border-neutral-800 no-underline text-neutral-900 dark:text-neutral-100 hover:text-neutral-400 dark:hover:text-neutral-600 transition-colors duration-200"
+      >
+        <div class="text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600">LinkedIn</div>
+        <span class="text-neutral-400 dark:text-neutral-600 text-sm">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="mt-20 pt-8 border-t border-neutral-200 dark:border-neutral-800 flex justify-between flex-wrap gap-2 text-xs text-neutral-400 dark:text-neutral-600">
+    <span>© 2026 Aderohunmu Ibrahim Adebowale</span>
+    <span>Lagos, Nigeria</span>
+  </div>
+
+</div>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const icon = document.getElementById('themeIcon');
+    const isDark = html.classList.contains('dark');
+    html.classList.toggle('dark', !isDark);
+    icon.textContent = !isDark ? '🌙' : '☀️';
+  }
+</script>
+
+</body>
+</html>
