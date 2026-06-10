@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OutcomeHub — Explore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="opportunity.css" />
+  <script src="opportunity.js"></script>
+</head>
+<body>
+
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<!-- ══════════════════════════════════
+     SIDEBAR
+══════════════════════════════════ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <!-- Exact logo SVG from Figma -->
+    <svg width="31" height="53" viewBox="0 0 31 53" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="OutcomeHub logo">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M17.974 42.3686C17.974 43.5214 17.1486 44.4818 16.0554 44.6934V48.3071C17.1486 48.5187 17.974 49.4791 17.974 50.6319C17.974 51.9398 16.9115 53 15.601 53C15.5672 53 15.5335 52.9993 15.5 52.9979C15.4665 52.9993 15.4329 53 15.399 53C14.0885 53 13.0261 51.9398 13.0261 50.6319C13.0261 49.4791 13.8515 48.5187 14.9446 48.3071V44.6934C13.8515 44.4818 13.0261 43.5214 13.0261 42.3686C13.0261 41.2159 13.8515 40.2555 14.9446 40.0439V31.8079C14.2623 31.7164 13.6443 31.422 13.1539 30.9874L4.64156 36.9356C4.70942 37.1559 4.74595 37.3899 4.74595 37.6324C4.74595 38.9403 3.68353 40.0005 2.37298 40.0005C1.06243 40.0005 1.87252e-05 38.9403 1.87252e-05 37.6324C1.87252e-05 36.3245 1.06243 35.2643 2.37298 35.2643C3.02953 35.2643 3.62381 35.5304 4.05342 35.9604L12.4403 30.0998C12.1702 29.6148 12.0163 29.0565 12.0163 28.4622C12.0163 26.7516 13.2913 25.3381 14.9446 25.1166V11.6839L3.80014 18.6529C3.48373 18.8891 3.10641 19.2417 2.62543 19.2417C1.81679 19.2417 1.16126 18.5875 1.16126 17.7805C1.16126 17.2678 1.51468 16.924 1.82616 16.556L13.9458 1.17553C15.0141 -0.456013 15.9588 -0.326334 17.0543 1.17553L29.1739 16.556C29.5025 17.0248 29.8388 17.2678 29.8388 17.7805C29.8388 18.5875 29.1832 19.2417 28.3746 19.2417C27.8936 19.2417 27.6173 18.8891 27.1999 18.6529L16.0554 11.6839V25.1166C17.7088 25.3381 18.9837 26.7516 18.9837 28.4622C18.9837 29.0565 18.8299 29.6148 18.5598 30.0998L26.9466 35.9604C27.3762 35.5304 27.9705 35.2643 28.6271 35.2643C29.9376 35.2643 31 36.3245 31 37.6324C31 38.9403 29.9376 40.0005 28.6271 40.0005C27.3165 40.0005 26.2541 38.9403 26.2541 37.6324C26.2541 37.3899 26.2906 37.1559 26.3585 36.9356L17.8461 30.9874C17.3557 31.422 16.7378 31.7164 16.0554 31.8079V40.0439C17.1486 40.2555 17.974 41.2159 17.974 42.3686Z" fill="#0F766E"/>
+    </svg>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="#" class="nav-item active" onclick="navClick(event)">
+      <i class="ti ti-layout-dashboard"></i> Dashboard
+    </a>
+    <a href="#" class="nav-item" onclick="navClick(event)">
+      <i class="ti ti-compass"></i> Explore
+    </a>
+    <a href="#" class="nav-item" onclick="navClick(event)">
+      <i class="ti ti-bookmark"></i> Saved Roles
+    </a>
+    <a href="#" class="nav-item" onclick="navClick(event)">
+      <i class="ti ti-clipboard-check"></i> Completed Task
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="#" class="nav-item">
+      <i class="ti ti-settings"></i> Settings
+    </a>
+    <a href="#" class="nav-item">
+      <i class="ti ti-logout"></i> Log out
+    </a>
+  </div>
+</aside>
+
+<!-- ══════════════════════════════════
+     TOPBAR
+══════════════════════════════════ -->
+<header class="topbar" id="topbar">
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle menu">
+      <i class="ti ti-menu-2"></i>
+    </button>
+  </div>
+
+  <!-- Centered brand name -->
+  <span class="topbar-brand">OutcomeHub</span>
+
+  <div class="topbar-right">
+    <button class="t-icon-btn" aria-label="Messages">
+      <i class="ti ti-mail"></i>
+    </button>
+    <button class="t-icon-btn" aria-label="Notifications" style="position:relative">
+      <i class="ti ti-bell"></i>
+      <span class="notif-dot"></span>
+    </button>
+    <!-- User with photo placeholder -->
+    <div class="user-chip">
+      <div class="user-chip__avatar">
+        <div style="width:100%;height:100%;background:var(--n300);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--n600)">D</div>
+      </div>
+      <span class="user-chip__name">David</span>
+      <i class="ti ti-chevron-down"></i>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════
+     PAGE BODY
+══════════════════════════════════ -->
+<main class="page" id="page">
+
+  <!-- ── FEED ── -->
+  <div class="feed">
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero__greeting">Welcome Back, David</p>
+      <h1 class="hero__title">Find your next opportunity</h1>
+      <p class="hero__sub">Don't just scroll. Explore opportunities and apple here.</p>
+      <div class="search-row">
+        <div class="search-bar">
+          <i class="ti ti-search"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Explore available opportunities and apply today"
+            oninput="filterCards()"
+          />
+        </div>
+        <button class="btn-filter" onclick="showToast('Filter panel coming soon')">
+          <i class="ti ti-adjustments-horizontal"></i> Filters
+        </button>
+        <button class="btn-search" onclick="filterCards()">Search</button>
+      </div>
+    </section>
+
+    <!-- List Header -->
+    <div class="list-header">
+      <span class="list-header__count">Showing over 100 available roles</span>
+      <div class="list-header__sort" onclick="cycleSort()">
+        Sort by: <span id="sortLabel">Time Posted</span>
+        <i class="ti ti-chevron-down"></i>
+      </div>
+    </div>
+
+    <!-- ── ROLE CARDS ── -->
+    <div id="roleList">
+
+      <!-- Card 1 -->
+      <article class="role-card" data-title="Role" data-org="NGO">
+        <div class="rc-top">
+          <div class="rc-logo"></div>
+          <div class="rc-body">
+            <div class="rc-org">NGO</div>
+            <div class="rc-title">Role</div>
+            <div class="rc-meta">
+              <span class="rc-meta-item"><i class="ti ti-map-pin"></i> Location</span>
+              <span class="rc-meta-item"><i class="ti ti-clock"></i> Duration</span>
+              <span class="rc-meta-item"><i class="ti ti-calendar"></i> Time Posted</span>
+            </div>
+          </div>
+          <div class="rc-pin-btns">
+            <button class="rc-pin-btn" title="Alert" onclick="showToast('Alert set!')"><i class="ti ti-bell"></i></button>
+            <button class="rc-pin-btn" title="Save" onclick="toggleSave(this)"><i class="ti ti-bookmark"></i></button>
+          </div>
+        </div>
+        <div class="rc-actions">
+          <span class="rc-spots"><i class="ti ti-users"></i> spots available</span>
+          <button class="rc-details" onclick="showToast('Opening details…')">Details here</button>
+          <button class="rc-apply" onclick="applyRole(this)">Apply</button>
+        </div>
+      </article>
+
+      <!-- Card 2 — active/featured (teal border) -->
+      <article class="role-card role-card--active" data-title="Role" data-org="NGO">
+        <div class="rc-top">
+          <div class="rc-logo"></div>
+          <div class="rc-body">
+            <div class="rc-org">NGO</div>
+            <div class="rc-title">Role</div>
+            <div class="rc-meta">
+              <span class="rc-meta-item"><i class="ti ti-map-pin"></i> Location</span>
+              <span class="rc-meta-item"><i class="ti ti-clock"></i> Duration</span>
+              <span class="rc-meta-item"><i class="ti ti-calendar"></i> Time Posted</span>
+            </div>
+          </div>
+          <div class="rc-pin-btns">
+            <button class="rc-pin-btn" title="Alert" onclick="showToast('Alert set!')"><i class="ti ti-bell"></i></button>
+            <button class="rc-pin-btn" title="Save" onclick="toggleSave(this)"><i class="ti ti-bookmark"></i></button>
+          </div>
+        </div>
+        <div class="rc-actions">
+          <span class="rc-spots"><i class="ti ti-users"></i> spots available</span>
+          <button class="rc-details" onclick="showToast('Opening details…')">Details here</button>
+          <button class="rc-apply" onclick="applyRole(this)">Apply</button>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="role-card" data-title="Role" data-org="NGO">
+        <div class="rc-top">
+          <div class="rc-logo"></div>
+          <div class="rc-body">
+            <div class="rc-org">NGO</div>
+            <div class="rc-title">Role</div>
+            <div class="rc-meta">
+              <span class="rc-meta-item"><i class="ti ti-map-pin"></i> Location</span>
+              <span class="rc-meta-item"><i class="ti ti-clock"></i> Duration</span>
+              <span class="rc-meta-item"><i class="ti ti-calendar"></i> Time Posted</span>
+            </div>
+          </div>
+          <div class="rc-pin-btns">
+            <button class="rc-pin-btn" title="Alert" onclick="showToast('Alert set!')"><i class="ti ti-bell"></i></button>
+            <button class="rc-pin-btn" title="Save" onclick="toggleSave(this)"><i class="ti ti-bookmark"></i></button>
+          </div>
+        </div>
+        <div class="rc-actions">
+          <span class="rc-spots"><i class="ti ti-users"></i> spots available</span>
+          <button class="rc-details" onclick="showToast('Opening details…')">Details here</button>
+          <button class="rc-apply" onclick="applyRole(this)">Apply</button>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="role-card" data-title="Role" data-org="NGO">
+        <div class="rc-top">
+          <div class="rc-logo"></div>
+          <div class="rc-body">
+            <div class="rc-org">NGO</div>
+            <div class="rc-title">Role</div>
+            <div class="rc-meta">
+              <span class="rc-meta-item"><i class="ti ti-map-pin"></i> Location</span>
+              <span class="rc-meta-item"><i class="ti ti-clock"></i> Duration</span>
+              <span class="rc-meta-item"><i class="ti ti-calendar"></i> Time Posted</span>
+            </div>
+          </div>
+          <div class="rc-pin-btns">
+            <button class="rc-pin-btn" title="Alert" onclick="showToast('Alert set!')"><i class="ti ti-bell"></i></button>
+            <button class="rc-pin-btn" title="Save" onclick="toggleSave(this)"><i class="ti ti-bookmark"></i></button>
+          </div>
+        </div>
+        <div class="rc-actions">
+          <span class="rc-spots"><i class="ti ti-users"></i> spots available</span>
+          <button class="rc-details" onclick="showToast('Opening details…')">Details here</button>
+          <button class="rc-apply" onclick="applyRole(this)">Apply</button>
+        </div>
+      </article>
+
+    </div><!-- /roleList -->
+
+    <div id="emptyState" style="display:none;text-align:center;padding:60px 0;color:var(--n400)">
+      <i class="ti ti-search-off" style="font-size:48px;display:block;margin-bottom:12px"></i>
+      <p>No roles match your search.</p>
+    </div>
+
+  </div><!-- /feed -->
+
+  <!-- ── RIGHT PANEL ── -->
+  <aside class="right-panel">
+
+    <!-- Profile block — teal-50 bg -->
+    <div class="rp-profile">
+      <div class="rp-avatar">
+        <div class="rp-avatar-placeholder">DE</div>
+      </div>
+      <div class="rp-name">David Emmanuel</div>
+      <div class="rp-role">Cartoonist</div>
+    </div>
+
+    <!-- Status buttons -->
+    <div class="rp-status">
+      <button class="rp-status-btn" onclick="showToast('Viewing approved roles')">Approved Roles</button>
+      <button class="rp-status-btn" onclick="showToast('Viewing rejected roles')">Rejected Roles</button>
+      <button class="rp-status-btn" onclick="showToast('Viewing milestones')">Milestone</button>
+    </div>
+
+    <!-- Alerts -->
+    <div class="rp-alerts">
+      <div class="rp-alerts__title">Receive Role Alerts</div>
+      <div class="rp-alerts__desc">See new opportunities seconds after they are posted</div>
+      <input class="rp-email-input" type="email" id="alertEmail" placeholder="Type Your Email" />
+      <button class="rp-activate" onclick="activateAlerts()">Activate</button>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- ══════════════════════════════════
+     BOTTOM NAV (mobile)
+══════════════════════════════════ -->
+<nav class="bottom-nav">
+  <div class="bottom-nav__row">
+    <div class="bnav-item" onclick="setBottomActive(this)"><i class="ti ti-layout-dashboard"></i><span>Dashboard</span></div>
+    <div class="bnav-item active" onclick="setBottomActive(this)"><i class="ti ti-compass"></i><span>Explore</span></div>
+    <div class="bnav-item" onclick="setBottomActive(this)"><i class="ti ti-bookmark"></i><span>Saved</span></div>
+    <div class="bnav-item" onclick="setBottomActive(this)"><i class="ti ti-user"></i><span>Profile</span></div>
+  </div>
+</nav>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <i class="ti ti-circle-check"></i>
+  <span id="toastMsg"></span>
+</div>
+
+
+</body>
+</html>
