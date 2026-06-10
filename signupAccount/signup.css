@@ -1,8 +1,8 @@
 :root {
-  --primary: #0e7490;
-  --primary-dark: #0c5d73;
-  --text: #0f172a;
-  --text-muted: #64748b;
+  --primary: #5dd6b8b6;
+  --primary-dark: #03c091;
+  --text: #3db9af;
+  --text-muted: #3bbea2;
   --border: #e2e8f0;
   --bg: #f8fafc;
   --error: #dc2626;
@@ -244,7 +244,7 @@ body {
   text-align: center;
   margin-top: 12px;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: #60a585d0;
 }
 
 .terms a {
