@@ -19,7 +19,7 @@ body{
     justify-content:space-between;
     align-items:center;
     padding:18px 50px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    box-shadow:0 2px 8px rgb(49, 121, 73);
 }
 
 .logo{
@@ -29,7 +29,7 @@ body{
 }
 
 .logo i{
-    color:#0891b2;
+    color:#50c782;
     font-size:24px;
 }
 
@@ -41,12 +41,12 @@ body{
 
 .navbar a{
     text-decoration:none;
-    color:#333;
+    color:#3fad8c;
     font-weight:600;
 }
 
 .active{
-    color:#06b6d4;
+    color:#3ec485;
 }
 
 /* Hero */
@@ -54,8 +54,8 @@ body{
 .hero{
     background:linear-gradient(
     135deg,
-    #0f766e,
-    #0891b2);
+    #39b682,
+    #3db683);
     color:white;
     padding:40px;
     display:flex;
@@ -144,7 +144,7 @@ body{
 }
 
 .primary{
-    background:#0891b2;
+    background:#3ea877;
     color:white;
     border:none;
 }
@@ -155,7 +155,7 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:#0891b2;
+    background:#3bad7e;
     color:white;
     padding:15px;
     border-radius:10px;
@@ -163,7 +163,7 @@ body{
 
 .download-btn{
     background:white;
-    color:#0891b2;
+    color:#3ec497;
     border:none;
     padding:10px 15px;
     border-radius:8px;
@@ -179,7 +179,7 @@ body{
 }
 
 .approved{
-    color:green;
+    color:rgb(81, 197, 172);
     font-weight:bold;
 }
 

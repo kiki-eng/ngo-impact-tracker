@@ -1,9 +1,9 @@
 :root {
-  --primary: #0e7490;
+  --primary: #3cbb91;
   --bg: #f5f7fa;
   --sidebar: #ffffff;
-  --text: #1e293b;
-  --text-muted: #94a3b8;
+  --text: #3c996a;
+  --text-muted: #3fb88f;
   --border: #e2e8f0;
   --card: #ffffff;
 }
@@ -41,7 +41,7 @@ body {
 .logo {
   width: 36px;
   height: 36px;
-  background: #0f172a;
+  background: #36aa74;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@ body {
 }
 
 .nav-link.active {
-  background: #0e7490;
+  background: #3cbd92;
   color: white;
 }
 
@@ -139,7 +139,7 @@ body {
 
 /* NGO Card */
 .ngo-card {
-  background: linear-gradient(90deg, #1e3a5f 0%, #0e7490 100%);
+  background: linear-gradient(90deg, #3fb885 0%, #3cbb8a 100%);
   border-radius: 10px;
   padding: 32px 28px;
   display: flex;
@@ -168,7 +168,7 @@ body {
 }
 
 .ngo-location {
-  color: #7dd3fc;
+  color: #3bbd71;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -177,7 +177,7 @@ body {
 
 .slots-badge {
   background: #e0f2fe;
-  color: #0369a1;
+  color: #3ac57f;
   border: none;
   padding: 6px 14px;
   border-radius: 20px;
@@ -290,7 +290,7 @@ body {
 }
 
 .btn-apply:hover {
-  background: #0c7354;
+  background: #38b97d;
 }
 
 /* Right Sidebar */
@@ -341,7 +341,7 @@ body {
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 500;
-  color:#010a07;
+  color:#3abd71f1;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -365,7 +365,7 @@ body {
 }
 
 .alerts-box p {
-  color:#7dd3fc;
+  color:#31be6c;
   font-size: 0.8rem;
   line-height: 1.5;
   margin-bottom: 16px;
@@ -384,7 +384,7 @@ body {
 }
 
 .btn-activate:hover {
-  background: #0c5d73;
+  background: #3bbd71;
 }
 
 /* Responsive */
