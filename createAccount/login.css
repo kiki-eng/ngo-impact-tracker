@@ -1,0 +1,115 @@
+:root{
+  --green:#25a865;
+  --dark:#0d1f15;
+  --cream:#f5f0e8;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+.container{
+  width:100%;
+  max-width:500px;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.header h1{
+  font-family:'Playfair Display',serif;
+  margin-bottom:10px;
+}
+
+.header p{
+  color:#777;
+}
+
+.role-selection{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.role-card{
+  border:2px solid #ddd;
+  border-radius:15px;
+  padding:20px;
+  cursor:pointer;
+  text-align:center;
+  transition:.3s;
+}
+
+.role-card.selected{
+  border-color:var(--green);
+  background:#f0fff7;
+}
+
+.role-card:hover{
+  border-color:var(--green);
+}
+
+.input-group{
+  margin-bottom:18px;
+}
+
+.input-group label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:600;
+}
+
+.input-group input{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
+
+.input-group input:focus{
+  outline:none;
+  border-color:var(--green);
+}
+
+.btn-primary{
+  width:100%;
+  background:var(--green);
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.btn-primary:hover{
+  opacity:.9;
+}
+
+.login-link{
+  text-align:center;
+  margin-top:20px;
+}
+
+.login-link a{
+  color:var(--green);
+  text-decoration:none;
+}
