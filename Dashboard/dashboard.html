@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutcomeHub Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css"
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-seedling"></i>
+        </div>
+
+        <nav>
+            <a href="#" class="active">
+                <i class="fas fa-table-columns"></i>
+                Dashboard
+            </a>
+
+            <a href="#">
+                <i class="far fa-bookmark"></i>
+                Saved Roles
+            </a>
+
+            <a href="#">
+                <i class="far fa-file-lines"></i>
+                Completed Tasks
+            </a>
+        </nav>
+
+        <div class="settings">
+            <i class="fas fa-gear"></i>
+            Settings
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <h2>OutcomeHub</h2>
+
+            <div class="user-menu">
+                <i class="far fa-envelope"></i>
+                <i class="far fa-bell"></i>
+
+                <div class="profile">
+                    <img src="https://via.placeholder.com/40" alt="">
+                    <span>David</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+
+            <h4>Welcome Back, David</h4>
+
+            <h1>Find your next opportunity</h1>
+
+            <p>Don't just scroll. Explore opportunities and apply here.</p>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Roles, skills, keywords and opportunity">
+                <button class="filter-btn">Filters</button>
+                <button class="search-btn">Search</button>
+            </div>
+
+        </section>
+
+        <div class="roles-header">
+            <span>Showing over 100 available roles</span>
+
+            <div>
+                Sort by:
+                <strong>Time Posted</strong>
+            </div>
+        </div>
+
+        <!-- Role Card -->
+        <div class="role-card">
+
+            <div class="role-info">
+                <h4>NGO</h4>
+                <h3>Volunteer Coordinator</h3>
+
+                <div class="meta">
+                    <span>Lagos</span>
+                    <span>Remote</span>
+                    <span>Time Posted</span>
+                </div>
+
+                <div class="actions">
+                    <button>25 Spots Available</button>
+                    <button>Details Here</button>
+                </div>
+            </div>
+
+            <button class="apply-btn">Apply</button>
+
+        </div>
+
+        <!-- Role Card -->
+        <div class="role-card">
+
+            <div class="role-info">
+                <h4>NGO</h4>
+                <h3>Community Volunteer</h3>
+
+                <div class="meta">
+                    <span>Abuja</span>
+                    <span>Hybrid</span>
+                    <span>1 Day Ago</span>
+                </div>
+
+                <div class="actions">
+                    <button>18 Spots Available</button>
+                    <button>Details Here</button>
+                </div>
+            </div>
+
+            <button class="apply-btn">Apply</button>
+
+        </div>
+
+    </main>
+
+    <!-- Profile Panel -->
+    <aside class="profile-panel">
+
+        <img src="https://via.placeholder.com/120" alt="Profile">
+
+        <h2>David Emmanuel</h2>
+        <p>Cartoonist</p>
+
+        <button>Approved Roles</button>
+        <button>Rejected Roles</button>
+        <button>Milestone</button>
+
+        <div class="alert-box">
+            <h3>Receive Role Alerts</h3>
+            <p>See new opportunities seconds after they are posted.</p>
+        </div>
+
+    </aside>
+
+</div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
