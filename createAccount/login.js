@@ -49,10 +49,8 @@ document
   alert("Registration Successful!");
 
   if(selectedRole === "volunteer"){
-      window.location.href =
-      "../Dashboard/dashboard.html";
+      window.location.href = "/Dashboard/dashboard.html";
   }else{
-      window.location.href =
-      "../Dashboard/dashboardNGO.html";
+      window.location.href = "/Dashboard/dashboardNGO.html";
   }
 });
