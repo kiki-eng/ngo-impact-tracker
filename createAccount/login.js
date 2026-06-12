@@ -50,9 +50,9 @@ document
 
   if(selectedRole === "volunteer"){
       window.location.href =
-      "volunteer-dashboard.html";
+      "../Dashboard/dashboard.html";
   }else{
       window.location.href =
-      "ngo-dashboard.html";
+      "../Dashboard/dashboardNGO.html";
   }
 });

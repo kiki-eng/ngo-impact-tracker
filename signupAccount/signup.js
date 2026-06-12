@@ -76,21 +76,25 @@ async function submitSignup() {
 
     if (res.ok) {
       form.innerHTML = `
-        <div style="text-align:center;padding:60px 20px">
-          <i class="fas fa-check-circle" style="font-size:64px;color:#16a34a;margin-bottom:20px"></i>
+        <div class="success-message">
+          <i class="fas fa-check-circle success-icon"></i>
           <h3>Account created!</h3>
-          <p style="color:#64748b;margin-top:10px">Check ${email.value} for verification link</p>
+          <p class="success-text">Check ${email.value} for a verification link, then sign in to continue.</p>
+          <a href="forgetpassword.html" class="btn-submit success-btn">Go to Sign In</a>
         </div>
       `;
-    } else {
-      setError(email, data.message || 'Signup failed');
+      return;
     }
+
+    setError(email, data.message || 'Signup failed');
   } catch (err) {
     alert('Network error. Please try again.');
     console.error(err);
   } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Sign up';
+    if (submitBtn.isConnected) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Sign up';
+    }
   }
 }
 
